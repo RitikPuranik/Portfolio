@@ -1,49 +1,11 @@
-import { useRef, useEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Github, Linkedin, Code } from 'lucide-react';
 import SparkleIcon from '@/components/SparkleIcon';
 import PillTag from '@/components/PillTag';
 import FadeUp from '@/components/FadeUp';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function AboutSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reducedMotion) return;
-
-    const ctx = gsap.context(() => {
-      // Animate skill pills with stagger
-      gsap.fromTo(
-        '.about-pill',
-        { opacity: 0, y: 30, scale: 0.9 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.6,
-          stagger: 0.08,
-          ease: 'back.out(1.4)',
-          scrollTrigger: {
-            trigger: '.about-pills-container',
-            start: 'top 85%',
-            toggleActions: 'play none none none',
-          },
-        }
-      );
-    }, section);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} id="about" className="relative bg-cream py-20 lg:py-32 overflow-hidden">
+    <section id="about" className="relative bg-cream py-20 lg:py-32 overflow-hidden">
       {/* Background decorative pattern */}
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
@@ -100,7 +62,7 @@ export default function AboutSection() {
             </FadeUp>
           </div>
 
-          {/* Right Column - Quick Info & Skills Preview */}
+          {/* Right Column - Quick Info */}
           <div>
             <FadeUp delay={0.2}>
               <h3 className="font-display text-3xl lg:text-4xl font-bold italic text-black mb-8">
@@ -147,21 +109,6 @@ export default function AboutSection() {
                 </div>
               </div>
             </FadeUp>
-
-            {/* Skill Pills */}
-            <FadeUp delay={0.4}>
-              <h3 className="font-display text-2xl lg:text-3xl font-bold italic text-black mt-12 mb-6">
-                Tech Stack
-              </h3>
-            </FadeUp>
-
-            <div className="about-pills-container flex flex-wrap gap-3">
-              {['Java', 'Python', 'React.js', 'Node.js', 'MongoDB', 'Express.js', 'Tailwind CSS', 'Docker'].map((skill) => (
-                <span key={skill} className="about-pill inline-flex items-center px-5 py-2 bg-forest text-white rounded-full font-body text-sm font-medium hover:bg-forest-dark transition-colors duration-300 cursor-default">
-                  {skill}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>

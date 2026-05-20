@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Download } from 'lucide-react';
 import SparkleIcon from '@/components/SparkleIcon';
 import OutlinedTextFill from '@/components/OutlinedTextFill';
 import FadeUp from '@/components/FadeUp';
@@ -141,9 +142,30 @@ export default function ResumeSection() {
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header */}
         <FadeUp>
-          <div className="flex items-center gap-3 mb-4">
-            <SparkleIcon size={24} />
-            <span className="font-body text-xs font-semibold uppercase tracking-[2px] text-yellow/70">Resume</span>
+          <div className="flex items-center gap-3 mb-4 lg:mb-5">
+            <SparkleIcon size={22} />
+            <span className="font-body text-xs font-semibold uppercase tracking-[2px] text-yellow/75">Resume</span>
+          </div>
+        </FadeUp>
+
+        <FadeUp delay={0.1}>
+          <div className="relative mb-16 overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.06] px-6 py-5 shadow-[0_18px_40px_rgba(8,14,7,0.14)] backdrop-blur-sm lg:mb-20 lg:px-8 lg:py-6">
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))]" />
+
+            <div className="relative flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold italic leading-none tracking-tight text-yellow">
+                Resume
+              </h2>
+
+              <a
+                href="/RITIK_PURANIK.pdf"
+                download
+                aria-label="Download resume"
+                className="group inline-flex h-14 w-14 items-center justify-center self-start rounded-full bg-black text-white shadow-[0_12px_28px_rgba(8,14,7,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-black/90"
+              >
+                <Download size={19} className="transition-transform duration-300 group-hover:-translate-y-0.5" />
+              </a>
+            </div>
           </div>
         </FadeUp>
 

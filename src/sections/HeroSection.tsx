@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import { Search, MapPin, Mail, Phone, Download } from 'lucide-react';
+import { Search, MapPin, Mail, Phone } from 'lucide-react';
 import SparkleIcon from '@/components/SparkleIcon';
 import OutlinedTextFill from '@/components/OutlinedTextFill';
 
@@ -80,26 +80,8 @@ export default function HeroSection() {
               I am a highly motivated <span className="font-semibold text-forest">web developer aspirant</span> with strong problem-solving skills and a solid foundation in software development. A fast learner, dedicated, and always bringing energy, curiosity, and a positive attitude to every project.
             </p>
 
-            {/* Action Buttons */}
-            <div className="hero-link-pill mt-8 flex flex-col sm:flex-row items-start gap-4">
-              <a
-                href="/RITIK_PURANIK.pdf"
-                download
-                className="group inline-flex items-center gap-4 rounded-[30px] bg-black px-3 py-3 text-white shadow-[0_18px_40px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(0,0,0,0.22)]"
-              >
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-yellow text-black transition-transform duration-300 group-hover:scale-105">
-                  <Download size={18} />
-                </span>
-                <span className="flex flex-col leading-none">
-                  <span className="font-body text-[10px] font-semibold uppercase tracking-[0.26em] text-yellow/70">
-                    Resume
-                  </span>
-                  <span className="mt-1 font-display text-xl font-bold italic text-cream">
-                    Download PDF
-                  </span>
-                </span>
-              </a>
-
+            {/* LinkedIn Pill */}
+            <div className="hero-link-pill mt-8">
               <a
                 href="https://www.linkedin.com/in/ritik-puranik-baaba42b7/"
                 target="_blank"

@@ -9,6 +9,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
+    title: 'DevDrop',
+    tech: 'MERN Stack',
+    link: 'https://dev-drop-gamma.vercel.app',
+    description:
+      'A complete marketplace platform connecting website buyers and sellers. Built with MongoDB, Express, React, and Node.js, featuring payment processing, auction mechanics, and automated workflows. Reduced manual admin tasks by 80% through intelligent automation.',
+    tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Payments'],
+    color: 'bg-cream-dark',
+  },
+  {
     title: 'CodeWave Solution',
     tech: 'MERN Stack',
     link: 'https://codewavesolution.in',
@@ -18,13 +27,13 @@ const projects = [
     color: 'bg-yellow',
   },
   {
-    title: 'DevDrop',
-    tech: 'MERN Stack',
-    link: 'https://dev-drop-gamma.vercel.app',
+    title: 'FoodGram',
+    tech: 'Full-Stack MERN App',
+    link: 'https://food-app-nine-liard.vercel.app/',
     description:
-      'A complete marketplace platform connecting website buyers and sellers. Built with MongoDB, Express, React, and Node.js, featuring payment processing, auction mechanics, and automated workflows. Reduced manual admin tasks by 80% through intelligent automation.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Payments'],
-    color: 'bg-cream-dark',
+      'Developed a full-stack MERN social media application dedicated to helping foodies discover local food vendors through engaging visual content. Built reels, follow systems, saved posts, and comments with secure JWT-based authentication for distinct user and vendor profiles, plus Framer Motion, Tailwind CSS, and ImageKit-backed media uploads.',
+    tags: ['React.js', 'Tailwind CSS', 'Framer Motion', 'Node.js', 'MongoDB', 'JWT', 'ImageKit'],
+    color: 'bg-taupe',
   },
 ];
 
