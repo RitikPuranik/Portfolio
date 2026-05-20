@@ -149,21 +149,29 @@ export default function ResumeSection() {
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <div className="relative mb-16 overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.06] px-6 py-5 shadow-[0_18px_40px_rgba(8,14,7,0.14)] backdrop-blur-sm lg:mb-20 lg:px-8 lg:py-6">
+          <div className="relative mb-16 overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.06] px-5 py-5 shadow-[0_18px_40px_rgba(8,14,7,0.14)] backdrop-blur-sm sm:px-6 lg:mb-20 lg:px-8 lg:py-6">
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))]" />
 
-            <div className="relative flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold italic leading-none tracking-tight text-yellow">
-                Resume
-              </h2>
+            <div className="relative flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+              <div className="min-w-0">
+                <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold italic leading-none tracking-tight text-yellow">
+                  Resume
+                </h2>
+                <p className="mt-3 max-w-xl font-body text-sm leading-relaxed text-white/70 sm:text-base">
+                  Download the latest PDF version of my resume for a quick overview of my education, experience, and skills.
+                </p>
+              </div>
 
               <a
                 href="/RITIK_PURANIK.pdf"
                 download
                 aria-label="Download resume"
-                className="group inline-flex h-14 w-14 items-center justify-center self-start rounded-full bg-black text-white shadow-[0_12px_28px_rgba(8,14,7,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-black/90"
+                className="group inline-flex w-full items-center justify-center gap-3 self-start rounded-full bg-black px-5 py-3.5 font-body text-sm font-semibold text-white shadow-[0_12px_28px_rgba(8,14,7,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-black/90 sm:w-auto sm:min-w-[220px] sm:self-auto"
               >
-                <Download size={19} className="transition-transform duration-300 group-hover:-translate-y-0.5" />
+                <span>Download Resume</span>
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-transform duration-300 group-hover:-translate-y-0.5">
+                  <Download size={18} />
+                </span>
               </a>
             </div>
           </div>
