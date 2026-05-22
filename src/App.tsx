@@ -18,20 +18,20 @@ export default function App() {
     });
   }, []);
 
-  if (showIntro) {
-    return <OpeningScreen onComplete={handleIntroComplete} />;
-  }
-
   return (
     <div className="relative">
-      <Navbar />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <ResumeSection />
-        <ProjectsSection />
-        <ContactSection />
-      </main>
+      {showIntro && <OpeningScreen onComplete={handleIntroComplete} />}
+
+      <div aria-hidden={showIntro}>
+        <Navbar />
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <ResumeSection />
+          <ProjectsSection />
+          <ContactSection />
+        </main>
+      </div>
     </div>
   );
 }
