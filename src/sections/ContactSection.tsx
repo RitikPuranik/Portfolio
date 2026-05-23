@@ -37,7 +37,7 @@ export default function ContactSection() {
         />
       </div>
 
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
+      <div className="relative z-10 mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
         <FadeUp>
           <div className="flex items-center gap-3 mb-4 justify-center">
@@ -61,7 +61,7 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Contact Info */}
           <FadeUp delay={0.2}>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 sm:p-8">
               <h3 className="font-display text-2xl italic font-bold text-yellow mb-6">Contact Info</h3>
               <div className="space-y-5">
                 <a
@@ -71,9 +71,9 @@ export default function ContactSection() {
                   <div className="w-10 h-10 bg-yellow/20 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-yellow/30 transition-colors">
                     <Mail size={18} className="text-yellow" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <span className="font-body text-xs uppercase tracking-wider text-white/50">Email</span>
-                    <p className="font-body text-sm">ritik23puranik@gmail.com</p>
+                    <p className="font-body text-sm break-all">ritik23puranik@gmail.com</p>
                   </div>
                 </a>
 
@@ -84,7 +84,7 @@ export default function ContactSection() {
                   <div className="w-10 h-10 bg-yellow/20 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-yellow/30 transition-colors">
                     <Phone size={18} className="text-yellow" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <span className="font-body text-xs uppercase tracking-wider text-white/50">Phone</span>
                     <p className="font-body text-sm">+91 8305389146</p>
                   </div>
@@ -94,7 +94,7 @@ export default function ContactSection() {
                   <div className="w-10 h-10 bg-yellow/20 rounded-full flex items-center justify-center flex-shrink-0">
                     <MapPin size={18} className="text-yellow" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <span className="font-body text-xs uppercase tracking-wider text-white/50">Location</span>
                     <p className="font-body text-sm">Jabalpur, Madhya Pradesh, India</p>
                   </div>
@@ -105,7 +105,7 @@ export default function ContactSection() {
 
           {/* Social Links */}
           <FadeUp delay={0.3}>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 sm:p-8">
               <h3 className="font-display text-2xl italic font-bold text-yellow mb-6">Social Links</h3>
               <div className="space-y-4">
                 {socials.map((social) => (
@@ -119,9 +119,9 @@ export default function ContactSection() {
                     <div className="w-10 h-10 bg-yellow/20 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-yellow/30 transition-colors">
                       <social.icon size={18} className="text-yellow" />
                     </div>
-                    <div className="flex-1">
+                    <div className="min-w-0 flex-1">
                       <span className="font-body text-sm font-medium">{social.label}</span>
-                      <p className="font-body text-xs text-white/50">{social.handle}</p>
+                      <p className="font-body text-xs text-white/50 break-all">{social.handle}</p>
                     </div>
                     <ExternalLink size={14} className="text-white/40 group-hover:text-yellow transition-colors" />
                   </a>
@@ -132,7 +132,7 @@ export default function ContactSection() {
 
           {/* Quick Message */}
           <FadeUp delay={0.4}>
-            <div className="bg-yellow rounded-2xl p-8 flex flex-col justify-between min-h-[280px]">
+            <div className="flex min-h-[280px] flex-col justify-between rounded-2xl bg-yellow p-6 sm:p-8">
               <div>
                 <h3 className="font-display text-2xl italic font-bold text-black mb-4">Let's Connect</h3>
                 <p className="font-body text-sm text-black/70 leading-relaxed">

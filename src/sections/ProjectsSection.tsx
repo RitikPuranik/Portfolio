@@ -79,7 +79,7 @@ export default function ProjectsSection() {
         }}
       />
 
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
+      <div className="relative z-10 mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
         <FadeUp>
           <div className="flex items-center gap-3 mb-4">
@@ -105,16 +105,16 @@ export default function ProjectsSection() {
           {projects.map((project, i) => (
             <div
               key={i}
-              className="project-card group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-black/5"
+              className="project-card group relative overflow-hidden rounded-2xl border border-black/5 bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
             >
               {/* Card Header */}
-              <div className={`${project.color} p-8 pb-6`}>
-                <div className="flex items-start justify-between mb-4">
-                  <div>
+              <div className={`${project.color} p-6 pb-5 sm:p-8 sm:pb-6`}>
+                <div className="mb-4 flex items-start justify-between gap-4">
+                  <div className="min-w-0">
                     <span className="font-body text-xs font-semibold uppercase tracking-[2px] text-black/60">
                       {project.tech}
                     </span>
-                    <h3 className="font-display text-2xl lg:text-3xl font-bold italic text-black mt-2 leading-tight">
+                    <h3 className="mt-2 break-words font-display text-2xl font-bold italic leading-tight text-black lg:text-3xl">
                       {project.title}
                     </h3>
                   </div>
@@ -131,7 +131,7 @@ export default function ProjectsSection() {
               </div>
 
               {/* Card Body */}
-              <div className="p-8 pt-6">
+              <div className="p-6 pt-5 sm:p-8 sm:pt-6">
                 <p className="font-body text-sm lg:text-base text-black/70 leading-relaxed mb-6">
                   {project.description}
                 </p>

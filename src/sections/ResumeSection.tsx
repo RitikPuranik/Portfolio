@@ -140,7 +140,7 @@ export default function ResumeSection() {
         />
       </div>
 
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
+      <div className="relative z-10 mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
         <FadeUp>
           <div className="flex items-center gap-3 mb-4 lg:mb-5">
@@ -218,7 +218,7 @@ export default function ResumeSection() {
 
             {/* Experience */}
             <FadeUp delay={0.3}>
-              <div className="mt-16 bg-yellow p-8 rounded-2xl">
+              <div className="mt-16 rounded-2xl bg-yellow p-6 sm:p-8">
                 <h2 className="font-display text-4xl sm:text-5xl font-bold italic text-black leading-[1.05] tracking-tight mb-8">
                   Experience
                 </h2>

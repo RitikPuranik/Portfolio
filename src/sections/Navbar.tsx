@@ -48,7 +48,7 @@ export default function Navbar() {
           scrolled ? 'bg-cream/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
         }`}
       >
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
+        <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-4 sm:px-6 lg:px-12">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 group" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
             <SparkleIcon size={22} fill="#E8833A" />
@@ -94,7 +94,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {menuOpen && (
-        <div className="fixed inset-0 z-40 bg-cream pt-24 px-8 md:hidden">
+        <div className="fixed inset-0 z-40 bg-cream px-6 pt-24 sm:px-8 md:hidden">
           <div className="flex flex-col gap-6">
             {navLinks.map((link) => (
               <a

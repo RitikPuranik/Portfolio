@@ -14,7 +14,7 @@ export default function AboutSection() {
         }}
       />
 
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Left Column - Career Objective */}
           <div>
