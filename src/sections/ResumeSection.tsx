@@ -31,7 +31,7 @@ const education = [
 
 const experience = [
   {
-    years: '2026 – Present',
+    years: 'Jan 2026 – Jun 2026',
     title: 'Backend Developer Intern',
     detail: 'CodeWaveSolution, Bhopal',
     description: '6 months internship to make and manage the website of CodeWaveSolution, an education platform.',
