@@ -38,11 +38,6 @@ const experience = [
   },
 ];
 
-const programmingLanguages = ['Java', 'Python', 'HTML', 'CSS', 'JavaScript'];
-const frontendSkills = ['HTML', 'CSS', 'JavaScript', 'React.js', 'Tailwind CSS'];
-const backendSkills = ['Node.js', 'Express.js', 'MongoDB'];
-const platforms = ['VS Code', 'AntiGravity', 'Postman'];
-const devops = ['Docker', 'Git', 'GitHub'];
 const certifications = [
   { org: 'Amazon Web Services (AWS)', items: 'AWS Cloud Practitioner' },
   { org: 'CISCO Network Academy', items: 'Python Essentials, HTML, CSS, JavaScript' },
