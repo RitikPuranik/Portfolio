@@ -13,7 +13,7 @@ const education = [
     years: '2023 – 2027',
     title: 'B. Tech – Computer Science',
     detail: 'Gyan Ganga Institute of Technology and Sciences, Jabalpur',
-    extra: 'CGPA: 7.68',
+    extra: 'CGPA: 7.8',
   },
   {
     years: '2022',
