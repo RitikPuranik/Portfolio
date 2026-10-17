@@ -24,10 +24,7 @@ export default function HeroSection() {
     <section ref={heroRef} className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden bg-[#304A36] pb-10 pt-24 text-cream lg:min-h-screen lg:pt-28">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'radial-gradient(circle, #F5B818 1px, transparent 1px)', backgroundSize: '34px 34px' }} />
       <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-14">
-        <div className="mb-7 flex items-center justify-between gap-4 border-b border-cream/20 pb-4">
-          <div className="poster-kicker flex items-center gap-2 font-body text-[10px] font-bold uppercase tracking-[0.24em] text-cream/80 sm:text-xs">
-            <SparkleIcon size={17} fill="#F5B818" /> <span>Independent developer · India</span>
-          </div>
+        <div className="mb-7 flex items-center justify-end gap-4 border-b border-cream/20 pb-4">
           <div className="poster-kicker hidden items-center gap-5 font-body text-[10px] uppercase tracking-[0.18em] text-cream/70 sm:flex">
             <a className="transition-colors hover:text-[#F5B818]" href="#about">About</a>
             <a className="transition-colors hover:text-[#F5B818]" href="#projects">Projects</a>
@@ -35,16 +32,13 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="relative grid grid-cols-1 items-center gap-9 lg:min-h-[68vh] lg:grid-cols-[0.92fr_1.08fr] lg:gap-8">
+        <div className="relative grid grid-cols-1 items-center gap-7 lg:min-h-[68vh] lg:grid-cols-[0.92fr_1.08fr] lg:gap-8">
           <div className="relative order-2 pb-2 lg:order-1 lg:pb-8">
-            <div className="poster-kicker mb-4 flex items-center gap-2 font-body text-xs font-semibold uppercase tracking-[0.25em] text-[#F5B818] sm:text-sm">
-              <span className="h-px w-8 bg-[#F5B818]" /> Hello, I'm Ritik
-            </div>
             <h1 className="poster-title relative z-10 font-display text-[clamp(3.2rem,10vw,8.8rem)] font-bold italic leading-[0.78] tracking-[-0.075em] text-[#F8F0E3]">
               PORTFOLIO<span className="text-[#F5B818]">.</span>
             </h1>
 
-            <div className="poster-photo relative ml-2 mt-8 w-[82%] max-w-[450px] sm:ml-7 sm:mt-10">
+            <div className="poster-photo relative ml-2 mt-6 w-[82%] max-w-[450px] sm:ml-7 sm:mt-8">
               <div className="absolute -left-3 -top-3 h-full w-full bg-[#C66F3D] sm:-left-5 sm:-top-5" />
               <div className="relative aspect-[4/4.2] overflow-hidden bg-[#C66F3D]">
                 <img src="/ritik.png" alt="Portrait of Ritik Puranik" className="h-full w-full object-cover object-top mix-blend-multiply" style={{ filter: 'contrast(1.08) saturate(0.82)' }} />
@@ -61,7 +55,7 @@ export default function HeroSection() {
 
           <div className="order-1 flex flex-col justify-center lg:order-2 lg:pl-5">
             <div className="poster-kicker mb-3 font-body text-[10px] font-semibold uppercase tracking-[0.28em] text-cream/65 sm:text-xs">Code · Design · Build</div>
-            <div className="poster-title font-display text-[clamp(3.3rem,8.8vw,7.8rem)] font-bold italic leading-[0.82] tracking-[-0.06em] text-transparent" style={{ WebkitTextStroke: '1px rgba(248,240,227,0.78)' }}>
+            <div className="poster-title font-display text-[clamp(3rem,8.4vw,7.4rem)] font-bold italic leading-[0.82] tracking-[-0.06em] text-transparent" style={{ WebkitTextStroke: '1px rgba(248,240,227,0.78)' }}>
               FULL STACK
             </div>
             <div className="poster-title mt-2 font-display text-[clamp(3.1rem,8.2vw,7.2rem)] font-bold italic leading-[0.82] tracking-[-0.06em] text-[#F5B818]">
