@@ -1,93 +1,176 @@
-import { useEffect, useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import { ArrowDownRight, ArrowUpRight, Github, Linkedin } from 'lucide-react';
+import { Search, MapPin, Mail, Phone } from 'lucide-react';
 import SparkleIcon from '@/components/SparkleIcon';
+import OutlinedTextFill from '@/components/OutlinedTextFill';
 
 export default function HeroSection() {
-  const heroRef = useRef<HTMLElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const root = heroRef.current;
-    if (!root || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion) return;
 
     const ctx = gsap.context(() => {
-      gsap.fromTo('.poster-kicker', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out', delay: 0.15 });
-      gsap.fromTo('.poster-title', { opacity: 0, y: 38 }, { opacity: 1, y: 0, duration: 1, stagger: 0.12, ease: 'power4.out', delay: 0.25 });
-      gsap.fromTo('.poster-photo', { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 1, ease: 'power3.out', delay: 0.35 });
-      gsap.fromTo('.poster-detail', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out', delay: 0.6 });
-    }, root);
+      // Animate hero elements on load
+      gsap.fromTo(
+        '.hero-greeting',
+        { opacity: 0, y: 60 },
+        { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 0.3 }
+      );
+      gsap.fromTo(
+        '.hero-bio',
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.6 }
+      );
+      gsap.fromTo(
+        '.hero-link-pill',
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', delay: 0.8 }
+      );
+      gsap.fromTo(
+        '.hero-pill-tag',
+        { opacity: 0, scale: 0.8 },
+        { opacity: 1, scale: 1, duration: 0.6, ease: 'back.out(1.7)', stagger: 0.15, delay: 0.5 }
+      );
+      gsap.fromTo(
+        '.hero-contact-card',
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.9 }
+      );
+    }, heroRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={heroRef} className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden bg-[#304A36] pb-10 pt-24 text-cream lg:min-h-screen lg:pt-28">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'radial-gradient(circle, #F5B818 1px, transparent 1px)', backgroundSize: '34px 34px' }} />
-      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-14">
-        <div className="mb-7 flex items-center justify-between gap-4 border-b border-cream/20 pb-4">
-          <div className="poster-kicker flex items-center gap-2 font-body text-[10px] font-bold uppercase tracking-[0.24em] text-cream/80 sm:text-xs">
-            <SparkleIcon size={17} fill="#F5B818" /> <span>Independent developer · India</span>
-          </div>
-          <div className="poster-kicker hidden items-center gap-5 font-body text-[10px] uppercase tracking-[0.18em] text-cream/70 sm:flex">
-            <a className="transition-colors hover:text-[#F5B818]" href="#about">About</a>
-            <a className="transition-colors hover:text-[#F5B818]" href="#projects">Projects</a>
-            <a className="transition-colors hover:text-[#F5B818]" href="#contact">Contact</a>
-          </div>
-        </div>
+    <section ref={heroRef} className="relative min-h-svh overflow-hidden bg-cream pt-20 lg:min-h-screen">
+      {/* Background decorative dots */}
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none"
+        style={{
+          backgroundImage: 'radial-gradient(circle, #4A5D43 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+        }}
+      />
 
-        <div className="relative grid grid-cols-1 items-center gap-9 lg:min-h-[68vh] lg:grid-cols-[0.92fr_1.08fr] lg:gap-8">
-          <div className="relative order-2 pb-2 lg:order-1 lg:pb-8">
-            <div className="poster-kicker mb-4 flex items-center gap-2 font-body text-xs font-semibold uppercase tracking-[0.25em] text-[#F5B818] sm:text-sm">
-              <span className="h-px w-8 bg-[#F5B818]" /> Hello, I'm Ritik
+      <div className="mx-auto max-w-[1200px] px-4 py-12 sm:px-6 lg:px-12 lg:py-20">
+        <div className="grid min-h-[calc(100svh-160px)] grid-cols-1 items-center gap-12 lg:min-h-[calc(100vh-160px)] lg:grid-cols-2 lg:gap-8">
+          {/* Left Column - Text */}
+          <div ref={textRef} className="relative z-10 order-2 lg:order-1">
+            {/* Decorative outlined text - hidden on small screens */}
+            <div className="hidden lg:block absolute -top-16 -left-8 opacity-40 pointer-events-none">
+              <OutlinedTextFill
+                lines={['PORT', 'FOLIO', 'FOLIO']}
+                lineClassName="font-display text-[80px] xl:text-[100px] font-bold italic"
+                triggerOnScroll={false}
+                delay={0.2}
+              />
             </div>
-            <h1 className="poster-title relative z-10 font-display text-[clamp(3.2rem,10vw,8.8rem)] font-bold italic leading-[0.78] tracking-[-0.075em] text-[#F8F0E3]">
-              PORTFOLIO<span className="text-[#F5B818]">.</span>
+
+            {/* Greeting */}
+            <h1 className="hero-greeting font-display text-6xl sm:text-7xl lg:text-8xl xl:text-[110px] font-bold italic leading-[0.92] text-black tracking-tight">
+              Hello,<br />
+              I'm Ritik<span className="text-forest">!</span>
             </h1>
 
-            <div className="poster-photo relative ml-2 mt-8 w-[82%] max-w-[450px] sm:ml-7 sm:mt-10">
-              <div className="absolute -left-3 -top-3 h-full w-full bg-[#C66F3D] sm:-left-5 sm:-top-5" />
-              <div className="relative aspect-[4/4.2] overflow-hidden bg-[#C66F3D]">
-                <img src="/ritik.png" alt="Portrait of Ritik Puranik" className="h-full w-full object-cover object-top mix-blend-multiply" style={{ filter: 'contrast(1.08) saturate(0.82)' }} />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#263D2D]/50 via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-4 font-body text-[10px] font-bold uppercase tracking-[0.25em] text-[#F8F0E3] sm:bottom-6 sm:left-6 sm:text-xs">Curiosity into creation</span>
-              </div>
-              <SparkleIcon size={30} fill="#F5B818" className="absolute -left-8 top-5 text-[#F5B818] sm:-left-10 sm:top-8" />
-              <SparkleIcon size={20} fill="#F5B818" className="absolute -bottom-6 right-5 text-[#F5B818]" />
-            </div>
-            <div className="poster-detail relative z-10 mt-7 max-w-[450px] border-l-2 border-[#F5B818] bg-black/75 px-4 py-3 font-body text-xs leading-relaxed text-cream/90 sm:absolute sm:bottom-0 sm:left-[48%] sm:mt-0 sm:w-[52%] sm:px-5 sm:py-4 sm:text-sm lg:bottom-5 lg:left-[45%]">
-              Full-stack developer building useful digital products, thoughtful interfaces, and AI-powered tools.
+            {/* Bio */}
+            <p className="hero-bio mt-8 font-body text-base lg:text-lg text-black/75 leading-relaxed max-w-lg">
+              I am a highly motivated <span className="font-semibold text-forest">web developer aspirant</span> with strong problem-solving skills and a solid foundation in software development. A fast learner, dedicated, and always bringing energy, curiosity, and a positive attitude to every project.
+            </p>
+
+            {/* LinkedIn Pill */}
+            <div className="hero-link-pill mt-8">
+              <a
+                href="https://www.linkedin.com/in/ritik-puranik-baaba42b7/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full max-w-full items-center justify-center gap-3 rounded-full bg-orange px-5 py-3 text-center font-body text-[13px] font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90 hover:shadow-lg sm:w-auto sm:justify-start sm:px-6 sm:text-sm"
+              >
+                <Search size={18} className="shrink-0" />
+                <span className="break-all sm:break-normal">linkedin.com/in/ritik-puranik</span>
+              </a>
             </div>
           </div>
 
-          <div className="order-1 flex flex-col justify-center lg:order-2 lg:pl-5">
-            <div className="poster-kicker mb-3 font-body text-[10px] font-semibold uppercase tracking-[0.28em] text-cream/65 sm:text-xs">Code · Design · Build</div>
-            <div className="poster-title font-display text-[clamp(3.3rem,8.8vw,7.8rem)] font-bold italic leading-[0.82] tracking-[-0.06em] text-transparent" style={{ WebkitTextStroke: '1px rgba(248,240,227,0.78)' }}>
-              FULL STACK
+          {/* Right Column - Portrait + Elements */}
+          <div ref={imageRef} className="relative order-1 flex flex-col items-center pb-4 sm:pb-20 lg:order-2 lg:pb-0">
+            {/* Floating Pill Tags */}
+            <div className="hero-pill-tag absolute right-2 top-4 z-20 sm:right-4 lg:right-0 lg:top-8">
+              <span className="inline-flex items-center rounded-full bg-yellow px-4 py-2 text-xs font-medium text-black shadow-lg sm:px-5 sm:py-2.5 sm:text-sm">
+                23rd September 2004
+              </span>
             </div>
-            <div className="poster-title mt-2 font-display text-[clamp(3.1rem,8.2vw,7.2rem)] font-bold italic leading-[0.82] tracking-[-0.06em] text-[#F5B818]">
-              DEVELOPER
+            <div className="hero-pill-tag absolute bottom-28 right-2 z-20 sm:right-0 lg:-right-4 lg:bottom-40">
+              <span className="inline-flex items-center rounded-full bg-yellow px-5 py-2 text-xs font-medium text-black shadow-lg sm:px-6 sm:py-2.5 sm:text-sm">
+                Indian
+              </span>
             </div>
-            <p className="poster-detail mt-7 max-w-lg font-body text-sm leading-relaxed text-cream/75 sm:mt-9 sm:text-base lg:text-lg">
-              I turn ideas into responsive web experiences, scalable backends, and products that solve real problems.
-            </p>
-            <div className="poster-detail mt-7 flex flex-wrap items-center gap-3 sm:mt-9">
-              <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-[#F5B818] px-5 py-3 font-body text-sm font-bold text-[#18261C] transition-transform hover:-translate-y-1">
-                Explore my work <ArrowDownRight size={17} />
-              </a>
-              <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-cream/40 px-5 py-3 font-body text-sm font-semibold text-cream transition-colors hover:border-[#F5B818] hover:text-[#F5B818]">
-                Let's connect <ArrowUpRight size={16} />
-              </a>
-            </div>
-            <div className="poster-detail mt-8 flex items-center gap-4 text-cream/70">
-              <a href="https://github.com/RitikPuranik" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" className="transition-colors hover:text-[#F5B818]"><Github size={19} /></a>
-              <a href="https://www.linkedin.com/in/ritik-puranik-baaba42b7/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" className="transition-colors hover:text-[#F5B818]"><Linkedin size={19} /></a>
-              <span className="h-px w-10 bg-cream/30" />
-              <span className="font-body text-[10px] uppercase tracking-[0.2em]">Scroll to explore</span>
+
+            {/* Sparkle decorations */}
+            <SparkleIcon size={28} className="absolute left-3 top-12 z-20 sm:left-4 lg:left-8" />
+            <SparkleIcon size={18} className="absolute bottom-44 left-1 z-20 sm:left-0 lg:-left-4" fill="#E8833A" />
+
+            {/* Portrait Frame */}
+            <div className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[360px]">
+              {/* Cross-hatch corner decoration */}
+              <svg className="absolute -top-3 -left-3 w-16 h-16 z-10" viewBox="0 0 60 60" aria-hidden="true">
+                <line x1="0" y1="30" x2="30" y2="0" stroke="#F5B818" strokeWidth="2" />
+                <line x1="0" y1="45" x2="45" y2="0" stroke="#F5B818" strokeWidth="2" />
+                <line x1="0" y1="60" x2="60" y2="0" stroke="#F5B818" strokeWidth="2" />
+              </svg>
+
+              {/* Image Container */}
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg shadow-2xl sm:h-[400px] sm:w-[320px] sm:aspect-auto lg:h-[450px] lg:w-[360px]">
+                {/* Forest green background block */}
+                <div className="absolute inset-0 bg-forest" />
+
+                {/* Portrait Image */}
+                <img
+                  src="/ritik.png"
+                  alt="Ritik Puranik"
+                  className="relative w-full h-full object-cover object-top z-10"
+                  style={{
+                    filter: 'contrast(1.05) brightness(1.02)',
+                  }}
+                />
+
+                {/* Halftone overlay */}
+                <div
+                  className="absolute inset-0 z-20 pointer-events-none opacity-20 mix-blend-multiply"
+                  style={{
+                    backgroundImage: 'radial-gradient(circle, #000 1.5px, transparent 1.5px)',
+                    backgroundSize: '6px 6px',
+                  }}
+                />
+              </div>
+
+              {/* Contact Card */}
+              <div className="hero-contact-card relative z-30 mt-6 w-full rounded-xl bg-black px-5 py-5 text-white shadow-2xl sm:absolute sm:-bottom-16 sm:right-0 sm:mt-0 sm:w-auto sm:min-w-[220px] sm:px-6 lg:-right-8">
+                <h3 className="font-display text-2xl italic font-bold mb-4">Contact</h3>
+                <div className="space-y-2.5">
+                  <div className="flex items-center gap-2.5 text-white/80">
+                    <MapPin size={15} className="text-yellow flex-shrink-0" />
+                    <span className="font-body text-sm">Jabalpur, India</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 text-white/80">
+                    <Mail size={15} className="text-yellow flex-shrink-0" />
+                    <span className="font-body text-sm break-all">ritik23puranik@gmail.com</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 text-white/80">
+                    <Phone size={15} className="text-yellow flex-shrink-0" />
+                    <span className="font-body text-sm">+91 8305389146</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-2 bg-[#F5B818]" />
+
+      {/* Decorative green bar */}
+      <div className="absolute bottom-0 left-0 right-0 h-2 bg-forest-dark" />
     </section>
   );
 }
