@@ -42,6 +42,7 @@ const certifications = [
   { org: 'Amazon Web Services (AWS)', items: 'AWS Cloud Practitioner' },
   { org: 'CISCO Network Academy', items: 'Python Essentials, HTML, CSS, JavaScript' },
   { org: 'Oracle Academy', items: 'Database Foundation' },
+  { org: 'Sheriyans Coding School', items: 'Data Science and Analytics with GenAI' },
 ];
 
 const skillGroups = [
