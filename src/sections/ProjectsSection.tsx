@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import SparkleIcon from '@/components/SparkleIcon';
 import FadeUp from '@/components/FadeUp';
 
@@ -11,7 +11,8 @@ const projects = [
   {
     title: 'ANNDATA',
     tech: 'AI-Powered Agricultural Intelligence',
-    link: 'https://github.com/RitikPuranik/ANNDATA',
+    link: 'https://anndata-jet.vercel.app/',
+    github: 'https://github.com/RitikPuranik/Anndata',
     description:
       'An agricultural intelligence and digital trading platform connecting farmers, FPOs, buyers, warehouses, and transporters. Includes mandi price intelligence, AI-powered price forecasting, sell-vs-store recommendations, buyer matching, warehouse and logistics workflows, GPS shipment tracking, quality assessment, digital trade records, and a WhatsApp Business API-powered farmer assistant.',
     tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Redis', 'AI', 'WhatsApp API'],
@@ -21,6 +22,7 @@ const projects = [
     title: 'DevDrop',
     tech: 'MERN Stack',
     link: 'https://dev-drop-gamma.vercel.app',
+    github: 'https://github.com/RitikPuranik/DevDrop',
     description:
       'A complete marketplace platform connecting website buyers and sellers. Built with MongoDB, Express, React, and Node.js, featuring payment processing, auction mechanics, and automated workflows. Reduced manual admin tasks by 80% through intelligent automation.',
     tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Payments'],
@@ -39,6 +41,7 @@ const projects = [
     title: 'FoodGram',
     tech: 'Full-Stack MERN App',
     link: 'https://food-app-nine-liard.vercel.app/',
+    github: 'https://github.com/RitikPuranik/FoodGram',
     description:
       'Developed a full-stack MERN social media application dedicated to helping foodies discover local food vendors through engaging visual content. Built reels, follow systems, saved posts, and comments with secure JWT-based authentication for distinct user and vendor profiles, plus Framer Motion, Tailwind CSS, and ImageKit-backed media uploads.',
     tags: ['React.js', 'Tailwind CSS', 'Framer Motion', 'Node.js', 'MongoDB', 'JWT', 'ImageKit'],
@@ -127,15 +130,30 @@ export default function ProjectsSection() {
                       {project.title}
                     </h3>
                   </div>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-shrink-0 w-10 h-10 bg-black/10 rounded-full flex items-center justify-center hover:bg-black/20 transition-colors duration-300 group-hover:scale-110"
-                    aria-label={`Visit ${project.title}`}
-                  >
-                    <ExternalLink size={18} className="text-black" />
-                  </a>
+                  <div className="flex flex-shrink-0 items-center gap-2">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-10 w-10 items-center justify-center rounded-full bg-black/10 transition-colors duration-300 hover:bg-black/20 group-hover:scale-110"
+                      aria-label={`Visit ${project.title} live project`}
+                      title="Visit live project"
+                    >
+                      <ExternalLink size={18} className="text-black" />
+                    </a>
+                    {'github' in project && project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex h-10 w-10 items-center justify-center rounded-full bg-black/10 transition-colors duration-300 hover:bg-black/20 group-hover:scale-110"
+                        aria-label={`View ${project.title} source code on GitHub`}
+                        title="View source code on GitHub"
+                      >
+                        <Github size={18} className="text-black" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -157,19 +175,36 @@ export default function ProjectsSection() {
                   ))}
                 </div>
 
-                {/* Link */}
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-6 font-body text-sm font-medium text-forest hover:text-yellow transition-colors duration-300 group/link"
-                >
-                  <span className="relative">
-                    Visit Project
-                    <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-yellow transition-all duration-300 group-hover/link:w-full" />
-                  </span>
-                  <ExternalLink size={14} />
-                </a>
+                {/* Project links */}
+                <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/link inline-flex items-center gap-2 font-body text-sm font-medium text-forest transition-colors duration-300 hover:text-yellow"
+                  >
+                    <span className="relative">
+                      Visit Project
+                      <span className="absolute -bottom-0.5 left-0 h-0.5 w-0 bg-yellow transition-all duration-300 group-hover/link:w-full" />
+                    </span>
+                    <ExternalLink size={14} />
+                  </a>
+                  {'github' in project && project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/github inline-flex items-center gap-2 font-body text-sm font-medium text-forest transition-colors duration-300 hover:text-yellow"
+                    >
+                      <Github size={16} />
+                      <span className="relative">
+                        GitHub
+                        <span className="absolute -bottom-0.5 left-0 h-0.5 w-0 bg-yellow transition-all duration-300 group-hover/github:w-full" />
+                      </span>
+                      <ExternalLink size={12} />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
