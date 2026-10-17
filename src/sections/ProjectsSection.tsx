@@ -20,12 +20,12 @@ const projects = [
   },
   {
     title: 'DevDrop',
-    tech: 'MERN Stack',
+    tech: 'AI Website Marketplace & Deployment Platform',
     link: 'https://dev-drop-gamma.vercel.app',
     github: 'https://github.com/RitikPuranik/DevDrop',
     description:
-      'A complete marketplace platform connecting website buyers and sellers. Built with MongoDB, Express, React, and Node.js, featuring payment processing, auction mechanics, and automated workflows. Reduced manual admin tasks by 80% through intelligent automation.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Payments'],
+      'An end-to-end platform for buying and selling website templates, running exclusive auctions, managing payments and seller payouts, and exporting projects to GitHub. Its multi-agent AI Studio generates and edits React/Vite websites from prompts and uploaded assets, validates builds with browser tests, and provides live previews and AI-assisted repairs. A queued deployment engine analyzes GitHub repositories and deploys projects to Vercel or Render, while Kashi helps diagnose failed builds. Built with React, Node.js/Express, MongoDB, Supabase, BullMQ/Redis, Gemini, Groq, Socket.IO, and Playwright.',
+    tags: ['React', 'Node.js', 'MongoDB', 'AI Agents', 'Gemini & Groq', 'BullMQ / Redis', 'GitHub', 'Vercel / Render'],
     color: 'bg-cream-dark',
   },
   {
