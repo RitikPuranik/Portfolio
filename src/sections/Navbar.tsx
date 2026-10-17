@@ -45,14 +45,14 @@ export default function Navbar() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? 'bg-cream/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
+          scrolled ? 'bg-cream/95 backdrop-blur-md shadow-sm' : 'bg-[#304A36]/95 backdrop-blur-sm'
         }`}
       >
         <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-4 sm:px-6 lg:px-12">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 group" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
             <SparkleIcon size={22} fill="#E8833A" />
-            <span className="font-display text-xl font-bold italic text-black tracking-tight">
+            <span className={`font-display text-xl font-bold italic tracking-tight transition-colors ${scrolled ? 'text-black' : 'text-cream'}`}>
               Ritik Puranik
             </span>
           </a>
@@ -64,7 +64,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="font-body text-[15px] font-medium text-black/80 hover:text-forest transition-colors duration-300 relative group"
+                className={`font-body text-[15px] font-medium transition-colors duration-300 relative group ${scrolled ? 'text-black/80 hover:text-forest' : 'text-cream/90 hover:text-yellow'}`}
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-forest transition-all duration-300 group-hover:w-full" />
@@ -82,7 +82,7 @@ export default function Navbar() {
               Get in touch!
             </a>
             <button
-              className="md:hidden p-2 text-black"
+              className={`md:hidden p-2 ${scrolled ? 'text-black' : 'text-cream'}`}
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
