@@ -2,6 +2,7 @@ import { startTransition, useCallback, useState } from 'react';
 import { useLenis } from '@/hooks/useLenis';
 import OpeningScreen from '@/components/OpeningScreen';
 import Navbar from '@/sections/Navbar';
+import PosterHeroSection from '@/sections/PosterHeroSection';
 import HeroSection from '@/sections/HeroSection';
 import AboutSection from '@/sections/AboutSection';
 import ResumeSection from '@/sections/ResumeSection';
@@ -25,6 +26,7 @@ export default function App() {
       <div aria-hidden={showIntro}>
         <Navbar />
         <main>
+          <PosterHeroSection />
           <HeroSection />
           <AboutSection />
           <ResumeSection />
