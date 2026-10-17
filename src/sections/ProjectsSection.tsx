@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     title: 'ANNDATA',
-    color: 'bg-[#243BCB]',
+    color: 'bg-[#556B2F]',
     tech: 'Agricultural Intelligence & Digital Marketplace',
     link: 'https://anndata-jet.vercel.app/',
     github: 'https://github.com/RitikPuranik/Anndata',
@@ -20,7 +20,7 @@ const projects = [
   },
   {
     title: 'DevDrop',
-    color: 'bg-[#4D35B8]',
+    color: 'bg-[#F5B818]',
     tech: 'AI Website Generation, Marketplace & Deployment',
     link: 'https://dev-drop-gamma.vercel.app',
     github: 'https://github.com/RitikPuranik/DevDrop',
@@ -30,7 +30,7 @@ const projects = [
   },
   {
     title: 'CodeWave Solution',
-    color: 'bg-[#C8ED2D]',
+    color: 'bg-[#F07835]',
     tech: 'Online Course Enrollment Platform',
     link: 'https://codewavesolution.in',
     description:
@@ -39,7 +39,7 @@ const projects = [
   },
   {
     title: 'FoodGram',
-    color: 'bg-[#D83D75]',
+    color: 'bg-[#4169E1]',
     tech: 'Social Food Discovery & Sharing Platform',
     link: 'https://food-app-nine-liard.vercel.app/',
     github: 'https://github.com/RitikPuranik/FoodGram',
@@ -123,10 +123,10 @@ export default function ProjectsSection() {
               <div className={`${project.color} p-6 pb-5 sm:p-8 sm:pb-6`}>
                 <div className="mb-4 flex items-start justify-between gap-4">
                   <div className="min-w-0">
-                    <h3 className={`break-words font-display text-2xl font-bold italic leading-tight lg:text-3xl ${project.title === 'CodeWave Solution' ? 'text-[#172016]' : 'text-[#F8F0E3]'}`}>
+                    <h3 className={`break-words font-display text-2xl font-bold italic leading-tight lg:text-3xl ${project.title === 'CodeWave Solution' || project.title === 'DevDrop' ? 'text-[#172016]' : 'text-[#F8F0E3]'}`}>
                       {project.title}
                     </h3>
-                    <span className={`mt-2 block font-body text-xs font-semibold uppercase tracking-[2px] ${project.title === 'CodeWave Solution' ? 'text-[#172016]/75' : 'text-white/80'}`}>
+                    <span className={`mt-2 block font-body text-xs font-semibold uppercase tracking-[2px] ${project.title === 'CodeWave Solution' || project.title === 'DevDrop' ? 'text-[#172016]/80' : 'text-white/90'}`}>
                       {project.tech}
                     </span>
                   </div>
