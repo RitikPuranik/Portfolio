@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     title: 'ANNDATA',
-    color: 'bg-[#344A32]',
+    color: 'bg-[#3F6948]',
     tech: 'Agricultural Intelligence & Digital Marketplace',
     link: 'https://anndata-jet.vercel.app/',
     github: 'https://github.com/RitikPuranik/Anndata',
@@ -20,7 +20,7 @@ const projects = [
   },
   {
     title: 'DevDrop',
-    color: 'bg-[#5C4814]',
+    color: 'bg-[#63447A]',
     tech: 'AI Website Generation, Marketplace & Deployment',
     link: 'https://dev-drop-gamma.vercel.app',
     github: 'https://github.com/RitikPuranik/DevDrop',
@@ -30,7 +30,7 @@ const projects = [
   },
   {
     title: 'CodeWave Solution',
-    color: 'bg-[#3E4A35]',
+    color: 'bg-[#315F86]',
     tech: 'Online Course Enrollment Platform',
     link: 'https://codewavesolution.in',
     description:
@@ -39,7 +39,7 @@ const projects = [
   },
   {
     title: 'FoodGram',
-    color: 'bg-[#6A4B16]',
+    color: 'bg-[#88445D]',
     tech: 'Social Food Discovery & Sharing Platform',
     link: 'https://food-app-nine-liard.vercel.app/',
     github: 'https://github.com/RitikPuranik/FoodGram',
