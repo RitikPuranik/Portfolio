@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
-    title: 'ANNDATA',
+    color: 'bg-lime-100',
     tech: 'Agricultural Intelligence & Digital Marketplace',
     link: 'https://anndata-jet.vercel.app/',
     github: 'https://github.com/RitikPuranik/Anndata',
@@ -19,8 +19,8 @@ const projects = [
     color: 'bg-lime-100',
   },
   {
-    title: 'DevDrop',
-    tech: 'Website Marketplace · AI Studio · Deployment',
+    color: 'bg-violet-100',
+    tech: 'AI Website Generation, Marketplace & Deployment',
     link: 'https://dev-drop-gamma.vercel.app',
     github: 'https://github.com/RitikPuranik/DevDrop',
     description:
@@ -29,7 +29,7 @@ const projects = [
     color: 'bg-violet-100',
   },
   {
-    title: 'CodeWave Solution',
+    color: 'bg-sky-100',
     tech: 'Online Course Enrollment Platform',
     link: 'https://codewavesolution.in',
     description:
@@ -38,7 +38,7 @@ const projects = [
     color: 'bg-sky-100',
   },
   {
-    title: 'FoodGram',
+    color: 'bg-rose-100',
     tech: 'Social Food Discovery & Sharing Platform',
     link: 'https://food-app-nine-liard.vercel.app/',
     github: 'https://github.com/RitikPuranik/FoodGram',
@@ -123,10 +123,10 @@ export default function ProjectsSection() {
               <div className={`${project.color} p-6 pb-5 sm:p-8 sm:pb-6`}>
                 <div className="mb-4 flex items-start justify-between gap-4">
                   <div className="min-w-0">
-                    <h3 className="break-words font-display text-2xl font-bold italic leading-tight text-black lg:text-3xl">
+                    <h3 className="break-words font-display text-2xl font-bold italic leading-tight text-[#F8F0E3] lg:text-3xl">
                       {project.title}
                     </h3>
-                    <span className="mt-2 block font-body text-xs font-semibold uppercase tracking-[2px] text-black/60">
+                    <span className="mt-2 block font-body text-xs font-semibold uppercase tracking-[2px] text-white/75">
                       {project.tech}
                     </span>
                   </div>
@@ -135,11 +135,11 @@ export default function ProjectsSection() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center rounded-full bg-black/10 transition-colors duration-300 hover:bg-black/20 group-hover:scale-110"
+                      className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors duration-300 hover:bg-white/20 group-hover:scale-110"
                       aria-label={`Visit ${project.title} live project`}
                       title="Visit live project"
                     >
-                      <ExternalLink size={18} className="text-black" />
+                      <ExternalLink size={18} className="text-white" />
                     </a>
                     {'github' in project && project.github && (
                       <a
@@ -150,7 +150,7 @@ export default function ProjectsSection() {
                         aria-label={`View ${project.title} source code on GitHub`}
                         title="View source code on GitHub"
                       >
-                        <Github size={18} className="text-black" />
+                        <Github size={18} className="text-white" />
                       </a>
                     )}
                   </div>
