@@ -16,7 +16,7 @@ const projects = [
     description:
       'An agricultural intelligence and digital trading platform connecting farmers, FPOs, buyers, warehouses, and transporters. Includes mandi price intelligence, AI-powered price forecasting, sell-vs-store recommendations, buyer matching, warehouse and logistics workflows, GPS shipment tracking, quality assessment, digital trade records, and a WhatsApp Business API-powered farmer assistant.',
     tags: ['Next.js', 'React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Prisma ORM', 'Redis', 'JWT & RBAC', 'AI Forecasting', 'WhatsApp Business API'],
-    color: 'bg-yellow',
+    color: 'bg-lime-100',
   },
   {
     title: 'DevDrop',
@@ -26,7 +26,7 @@ const projects = [
     description:
       'An end-to-end platform for buying and selling website templates, running exclusive auctions, managing payments and seller payouts, and exporting projects to GitHub. Its multi-agent AI Studio generates and edits React/Vite websites from prompts and uploaded assets, validates builds with browser tests, and provides live previews and AI-assisted repairs. A queued deployment engine analyzes GitHub repositories and deploys projects to Vercel or Render, while Kashi helps diagnose failed builds. Built with React, Node.js/Express, MongoDB, Supabase, BullMQ/Redis, Gemini, Groq, Socket.IO, and Playwright.',
     tags: ['React', 'Vite', 'Node.js', 'Express', 'MongoDB', 'Supabase', 'BullMQ & Redis', 'Gemini', 'Groq', 'Playwright', 'Socket.IO', 'Razorpay', 'GitHub', 'Vercel & Render'],
-    color: 'bg-cream-dark',
+    color: 'bg-violet-100',
   },
   {
     title: 'CodeWave Solution',
@@ -35,7 +35,7 @@ const projects = [
     description:
       'Developed a scalable MERN-stack platform for online and offline coding courses with responsive frontend interfaces using React.js and Tailwind CSS and designed REST APIs using Node.js and Express.js with MongoDB integration.',
     tags: ['React', 'Vite', 'Material UI', 'Tailwind CSS', 'Node.js', 'Express 5', 'MongoDB', 'Supabase', 'Google OAuth', 'AI Chatbot', 'Socket.IO'],
-    color: 'bg-yellow',
+    color: 'bg-sky-100',
   },
   {
     title: 'FoodGram',
@@ -45,7 +45,7 @@ const projects = [
     description:
       'Developed a full-stack MERN social media application dedicated to helping foodies discover local food vendors through engaging visual content. Built reels, follow systems, saved posts, and comments with secure JWT-based authentication for distinct user and vendor profiles, plus Framer Motion, Tailwind CSS, and ImageKit-backed media uploads.',
     tags: ['React 19', 'Vite', 'React Router', 'Tailwind CSS', 'Framer Motion', 'Node.js', 'Express 5', 'MongoDB & Mongoose', 'JWT Auth', 'ImageKit', 'Multer'],
-    color: 'bg-taupe',
+    color: 'bg-rose-100',
   },
 ];
 
