@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Download, Code2, PanelsTopLeft, Server, Database, Cloud, Wrench, BrainCircuit, GitBranch, Users } from 'lucide-react';
+import { Download, Code2, PanelsTopLeft, Server, Database, Cloud, BrainCircuit, Users } from 'lucide-react';
 import SparkleIcon from '@/components/SparkleIcon';
 import OutlinedTextFill from '@/components/OutlinedTextFill';
 import FadeUp from '@/components/FadeUp';
