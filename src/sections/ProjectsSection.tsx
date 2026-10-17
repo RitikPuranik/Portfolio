@@ -9,6 +9,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
+    title: 'ANNDATA',
+    tech: 'AI-Powered Agricultural Intelligence',
+    link: 'https://github.com/RitikPuranik/ANNDATA',
+    description:
+      'An agricultural intelligence and digital trading platform connecting farmers, FPOs, buyers, warehouses, and transporters. Includes mandi price intelligence, AI-powered price forecasting, sell-vs-store recommendations, buyer matching, warehouse and logistics workflows, GPS shipment tracking, quality assessment, digital trade records, and a WhatsApp Business API-powered farmer assistant.',
+    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Redis', 'AI', 'WhatsApp API'],
+    color: 'bg-yellow',
+  },
+  {
     title: 'DevDrop',
     tech: 'MERN Stack',
     link: 'https://dev-drop-gamma.vercel.app',
