@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Download, Code2, PanelsTopLeft, Server, Database, Cloud, BrainCircuit, Users } from 'lucide-react';
+import { Download, Code2, PanelsTopLeft, Server, Wrench, BrainCircuit, Cloud, GitBranch } from 'lucide-react';
 import SparkleIcon from '@/components/SparkleIcon';
 import OutlinedTextFill from '@/components/OutlinedTextFill';
 import FadeUp from '@/components/FadeUp';
@@ -52,43 +52,47 @@ const certifications = [
 const skillGroups = [
   {
     title: 'Languages',
-    subtitle: 'Core programming',
+    subtitle: 'Programming fundamentals',
     icon: Code2,
-    skills: ['Java', 'Python', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3'],
+    skills: ['Java', 'Python', 'JavaScript'],
   },
   {
     title: 'Frontend',
-    subtitle: 'Interfaces & experiences',
+    subtitle: 'Web interfaces',
     icon: PanelsTopLeft,
-    skills: ['React', 'Next.js', 'Vite', 'Tailwind CSS', 'Framer Motion', 'GSAP'],
+    skills: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Tailwind CSS'],
   },
   {
-    title: 'Backend',
-    subtitle: 'APIs & application logic',
+    title: 'Distributed Systems & Backend',
+    subtitle: 'Server-side development',
     icon: Server,
-    skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT Authentication', 'Socket.IO'],
+    skills: ['Node.js', 'Express.js', 'REST APIs', 'MongoDB', 'JWT'],
   },
   {
-    title: 'Databases',
-    subtitle: 'Data & persistence',
-    icon: Database,
-    skills: ['MongoDB', 'PostgreSQL', 'Prisma ORM', 'Redis', 'Supabase'],
+    title: 'Platforms',
+    subtitle: 'Development workflow',
+    icon: Wrench,
+    skills: ['VS Code', 'AntiGravity', 'Postman'],
+  },
+  {
+    title: 'AI / ML',
+    subtitle: 'Data analysis & machine learning',
+    icon: BrainCircuit,
+    skills: ['Python', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Machine Learning'],
   },
   {
     title: 'Cloud & DevOps',
-    subtitle: 'Build, ship, maintain',
+    subtitle: 'Version control & deployment',
     icon: Cloud,
-    skills: ['Docker', 'Git', 'GitHub', 'Vercel', 'Render'],
+    skills: ['Docker', 'Git', 'GitHub', 'AWS', 'Vercel', 'Render'],
   },
   {
-    title: 'AI & Developer Tools',
-    subtitle: 'Automation & workflow',
-    icon: BrainCircuit,
-    skills: ['Gemini', 'Groq', 'Playwright', 'Postman', 'VS Code'],
+    title: 'Data Structures & Algorithms',
+    subtitle: 'Problem-solving foundations',
+    icon: GitBranch,
+    skills: ['Arrays', 'Strings', 'Linked Lists', 'Stacks', 'Queues', 'Trees', 'Binary Search', 'Sliding Window', 'Greedy Algorithms', 'Dynamic Programming'],
   },
 ];
-
-const professionalSkills = ['Problem solving', 'Team collaboration', 'Communication', 'Ownership'];
 
 export default function ResumeSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -321,7 +325,7 @@ export default function ResumeSection() {
                   Technical<br className="hidden sm:block" /> Skills<span className="text-white">.</span>
                 </h2>
                 <p className="mt-4 max-w-xl font-body text-sm leading-relaxed text-white/65 sm:text-base">
-                  A practical stack shaped by building full-stack products, AI-powered features, real-time experiences, and deployment workflows.
+                  The tools and fundamentals listed in my resume, from web development and backend APIs to machine learning, cloud deployment, and data structures.
                 </p>
               </div>
             </FadeUp>
@@ -331,7 +335,7 @@ export default function ResumeSection() {
                 const Icon = group.icon;
                 return (
                   <FadeUp key={group.title} delay={0.08 * index}>
-                    <article className="skill-pill group h-full rounded-2xl border border-white/10 bg-[#263D2D]/75 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-yellow/40 hover:bg-[#263D2D] hover:shadow-[0_16px_36px_rgba(0,0,0,0.18)] sm:p-5">
+                    <article className="group h-full rounded-2xl border border-white/10 bg-[#263D2D]/75 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-yellow/40 hover:bg-[#263D2D] hover:shadow-[0_16px_36px_rgba(0,0,0,0.18)] sm:p-5">
                       <div className="mb-5 flex items-start justify-between gap-3">
                         <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-yellow/20 bg-yellow/10 text-yellow transition-colors group-hover:bg-yellow group-hover:text-forest-dark">
                           <Icon size={21} strokeWidth={1.8} />
@@ -353,24 +357,7 @@ export default function ResumeSection() {
               })}
             </div>
 
-            <FadeUp delay={0.5}>
-              <div className="mt-5 rounded-2xl border border-yellow/20 bg-yellow/[0.08] p-5 sm:p-6">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow text-forest-dark">
-                    <Users size={20} />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-xl font-bold italic text-yellow">Beyond the code</h3>
-                    <p className="font-body text-xs text-white/55">How I work with people and problems</p>
-                  </div>
-                </div>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {professionalSkills.map((skill) => (
-                    <span key={skill} className="rounded-full border border-yellow/20 px-3.5 py-2 font-body text-xs font-medium text-cream/90">{skill}</span>
-                  ))}
-                </div>
-              </div>
-            </FadeUp>
+
           </div>
         </div>
       </div>
