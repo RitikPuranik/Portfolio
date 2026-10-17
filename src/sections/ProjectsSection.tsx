@@ -10,41 +10,41 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     title: 'ANNDATA',
-    tech: 'AI-Powered Agricultural Intelligence',
+    tech: 'Agricultural Intelligence & Digital Marketplace',
     link: 'https://anndata-jet.vercel.app/',
     github: 'https://github.com/RitikPuranik/Anndata',
     description:
       'An agricultural intelligence and digital trading platform connecting farmers, FPOs, buyers, warehouses, and transporters. Includes mandi price intelligence, AI-powered price forecasting, sell-vs-store recommendations, buyer matching, warehouse and logistics workflows, GPS shipment tracking, quality assessment, digital trade records, and a WhatsApp Business API-powered farmer assistant.',
-    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Redis', 'AI', 'WhatsApp API'],
+    tags: ['Next.js', 'React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Prisma ORM', 'Redis', 'JWT & RBAC', 'AI Forecasting', 'WhatsApp Business API'],
     color: 'bg-yellow',
   },
   {
     title: 'DevDrop',
-    tech: 'AI Website Creation & Deployment Platform',
+    tech: 'Website Marketplace · AI Studio · Deployment',
     link: 'https://dev-drop-gamma.vercel.app',
     github: 'https://github.com/RitikPuranik/DevDrop',
     description:
       'An end-to-end platform for buying and selling website templates, running exclusive auctions, managing payments and seller payouts, and exporting projects to GitHub. Its multi-agent AI Studio generates and edits React/Vite websites from prompts and uploaded assets, validates builds with browser tests, and provides live previews and AI-assisted repairs. A queued deployment engine analyzes GitHub repositories and deploys projects to Vercel or Render, while Kashi helps diagnose failed builds. Built with React, Node.js/Express, MongoDB, Supabase, BullMQ/Redis, Gemini, Groq, Socket.IO, and Playwright.',
-    tags: ['React', 'Node.js', 'MongoDB', 'AI Agents', 'Gemini & Groq', 'BullMQ / Redis', 'GitHub', 'Vercel / Render'],
+    tags: ['React', 'Vite', 'Node.js', 'Express', 'MongoDB', 'Supabase', 'BullMQ & Redis', 'Gemini', 'Groq', 'Playwright', 'Socket.IO', 'Razorpay', 'GitHub', 'Vercel & Render'],
     color: 'bg-cream-dark',
   },
   {
     title: 'CodeWave Solution',
-    tech: 'AI-Assisted Coding Education Platform',
+    tech: 'Online Course Enrollment Platform',
     link: 'https://codewavesolution.in',
     description:
       'Developed a scalable MERN-stack platform for online and offline coding courses with responsive frontend interfaces using React.js and Tailwind CSS and designed REST APIs using Node.js and Express.js with MongoDB integration.',
-    tags: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB'],
+    tags: ['React', 'Vite', 'Material UI', 'Tailwind CSS', 'Node.js', 'Express 5', 'MongoDB', 'Supabase', 'Google OAuth', 'AI Chatbot', 'Socket.IO'],
     color: 'bg-yellow',
   },
   {
     title: 'FoodGram',
-    tech: 'Social Food Discovery & Community Platform',
+    tech: 'Social Food Discovery & Sharing Platform',
     link: 'https://food-app-nine-liard.vercel.app/',
     github: 'https://github.com/RitikPuranik/FoodGram',
     description:
       'Developed a full-stack MERN social media application dedicated to helping foodies discover local food vendors through engaging visual content. Built reels, follow systems, saved posts, and comments with secure JWT-based authentication for distinct user and vendor profiles, plus Framer Motion, Tailwind CSS, and ImageKit-backed media uploads.',
-    tags: ['React.js', 'Tailwind CSS', 'Framer Motion', 'Node.js', 'MongoDB', 'JWT', 'ImageKit'],
+    tags: ['React 19', 'Vite', 'React Router', 'Tailwind CSS', 'Framer Motion', 'Node.js', 'Express 5', 'MongoDB & Mongoose', 'JWT Auth', 'ImageKit', 'Multer'],
     color: 'bg-taupe',
   },
 ];
