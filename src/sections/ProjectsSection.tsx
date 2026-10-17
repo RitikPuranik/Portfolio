@@ -14,7 +14,7 @@ const projects = [
     link: 'https://anndata-jet.vercel.app/',
     github: 'https://github.com/RitikPuranik/Anndata',
     description:
-      'An agricultural intelligence and digital trading platform connecting farmers, FPOs, buyers, warehouses, and transporters. Includes mandi price intelligence, AI-powered price forecasting, sell-vs-store recommendations, buyer matching, warehouse and logistics workflows, GPS shipment tracking, quality assessment, digital trade records, and a WhatsApp Business API-powered farmer assistant.',
+      'ANNDATA connects farmers, FPOs, buyers, warehouses, and transporters through one agricultural intelligence and trade platform. It brings together mandi price insights, AI-assisted price forecasting, explainable sell-vs-store decisions, crop-lot and quality workflows, buyer matching, offers and negotiation, storage and logistics planning, shipment tracking, delivery reconciliation, and digital trade records. A WhatsApp Business API-powered farmer assistant makes selected market-information and trade-discovery workflows accessible through messaging.',
     tags: ['Next.js', 'React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Prisma ORM', 'Redis', 'JWT & RBAC', 'AI Forecasting', 'WhatsApp Business API'],
     color: 'bg-lime-100',
   },
@@ -123,12 +123,12 @@ export default function ProjectsSection() {
               <div className={`${project.color} p-6 pb-5 sm:p-8 sm:pb-6`}>
                 <div className="mb-4 flex items-start justify-between gap-4">
                   <div className="min-w-0">
-                    <span className="font-body text-xs font-semibold uppercase tracking-[2px] text-black/60">
-                      {project.tech}
-                    </span>
-                    <h3 className="mt-2 break-words font-display text-2xl font-bold italic leading-tight text-black lg:text-3xl">
+                    <h3 className="break-words font-display text-2xl font-bold italic leading-tight text-black lg:text-3xl">
                       {project.title}
                     </h3>
+                    <span className="mt-2 block font-body text-xs font-semibold uppercase tracking-[2px] text-black/60">
+                      {project.tech}
+                    </span>
                   </div>
                   <div className="flex flex-shrink-0 items-center gap-2">
                     <a
