@@ -24,14 +24,6 @@ export default function HeroSection() {
     <section ref={heroRef} className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden bg-[#304A36] pb-10 pt-24 text-cream lg:min-h-screen lg:pt-28">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'radial-gradient(circle, #F5B818 1px, transparent 1px)', backgroundSize: '34px 34px' }} />
       <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-14">
-        <div className="mb-7 flex items-center justify-end gap-4 border-b border-cream/20 pb-4">
-          <div className="poster-kicker hidden items-center gap-5 font-body text-[10px] uppercase tracking-[0.18em] text-cream/70 sm:flex">
-            <a className="transition-colors hover:text-[#F5B818]" href="#about">About</a>
-            <a className="transition-colors hover:text-[#F5B818]" href="#projects">Projects</a>
-            <a className="transition-colors hover:text-[#F5B818]" href="#contact">Contact</a>
-          </div>
-        </div>
-
         <div className="relative grid grid-cols-1 items-center gap-7 lg:min-h-[68vh] lg:grid-cols-[0.92fr_1.08fr] lg:gap-8">
           <div className="relative order-2 pb-2 lg:order-1 lg:pb-8">
             <h1 className="poster-title relative z-10 font-display text-[clamp(3.2rem,10vw,8.8rem)] font-bold italic leading-[0.78] tracking-[-0.075em] text-[#F8F0E3]">
