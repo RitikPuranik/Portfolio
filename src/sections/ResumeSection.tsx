@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Download, Code2, PanelsTopLeft, Server, Wrench, BrainCircuit, Cloud, GitBranch } from 'lucide-react';
+import { Download } from 'lucide-react';
 import SparkleIcon from '@/components/SparkleIcon';
 import OutlinedTextFill from '@/components/OutlinedTextFill';
 import FadeUp from '@/components/FadeUp';
@@ -45,48 +45,13 @@ const certifications = [
 ];
 
 const skillGroups = [
-  {
-    title: 'Languages',
-    subtitle: 'Programming fundamentals',
-    icon: Code2,
-    skills: ['Java', 'Python', 'JavaScript'],
-  },
-  {
-    title: 'Frontend',
-    subtitle: 'Web interfaces',
-    icon: PanelsTopLeft,
-    skills: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Tailwind CSS'],
-  },
-  {
-    title: 'Distributed Systems & Backend',
-    subtitle: 'Server-side development',
-    icon: Server,
-    skills: ['Node.js', 'Express.js', 'REST APIs', 'MongoDB', 'JWT'],
-  },
-  {
-    title: 'Platforms',
-    subtitle: 'Development workflow',
-    icon: Wrench,
-    skills: ['VS Code', 'AntiGravity', 'Postman'],
-  },
-  {
-    title: 'AI / ML',
-    subtitle: 'Data analysis & machine learning',
-    icon: BrainCircuit,
-    skills: ['Python', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Machine Learning'],
-  },
-  {
-    title: 'Cloud & DevOps',
-    subtitle: 'Version control & deployment',
-    icon: Cloud,
-    skills: ['Docker', 'Git', 'GitHub', 'AWS', 'Vercel', 'Render'],
-  },
-  {
-    title: 'Data Structures & Algorithms',
-    subtitle: 'Problem-solving foundations',
-    icon: GitBranch,
-    skills: ['Arrays', 'Strings', 'Linked Lists', 'Stacks', 'Queues', 'Trees', 'Binary Search', 'Sliding Window', 'Greedy Algorithms', 'Dynamic Programming'],
-  },
+  { title: 'Programming Languages', skills: ['Java', 'Python', 'JavaScript'] },
+  { title: 'Frontend', skills: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Tailwind CSS'] },
+  { title: 'Distributed Systems & Backend', skills: ['Node.js', 'Express.js', 'REST APIs', 'MongoDB', 'JWT'] },
+  { title: 'Platforms', skills: ['VS Code', 'AntiGravity', 'Postman'] },
+  { title: 'AI / ML', skills: ['Python', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Machine Learning'] },
+  { title: 'Cloud & DevOps', skills: ['Docker', 'Git', 'GitHub', 'AWS', 'Vercel', 'Render'] },
+  { title: 'Data Structures & Algorithms', skills: ['Arrays', 'Strings', 'Linked Lists', 'Stacks', 'Queues', 'Trees', 'Binary Search', 'Sliding Window', 'Greedy Algorithms', 'Dynamic Programming'] },
 ];
 
 export default function ResumeSection() {
@@ -311,48 +276,31 @@ export default function ResumeSection() {
           {/* Right Column - Skills */}
           <div className="skills-container">
             <FadeUp delay={0.2}>
-              <div className="mb-8">
-                <div className="mb-4 flex items-center gap-3">
-                  <span className="h-px w-8 bg-yellow" />
-                  <span className="font-body text-xs font-semibold uppercase tracking-[0.22em] text-yellow/75">My toolkit</span>
-                </div>
-                <h2 className="font-display text-4xl font-bold italic leading-[1.02] tracking-tight text-yellow sm:text-5xl lg:text-6xl">
-                  Technical<br className="hidden sm:block" /> Skills<span className="text-white">.</span>
-                </h2>
-                <p className="mt-4 max-w-xl font-body text-sm leading-relaxed text-white/65 sm:text-base">
-                  The tools and fundamentals listed in my resume, from web development and backend APIs to machine learning, cloud deployment, and data structures.
-                </p>
-              </div>
+              <h2 className="mb-10 font-display text-4xl font-bold italic leading-[1.05] tracking-tight text-yellow sm:text-5xl lg:text-6xl">
+                Technical Skills
+              </h2>
             </FadeUp>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {skillGroups.map((group, index) => {
-                const Icon = group.icon;
-                return (
-                  <FadeUp key={group.title} delay={0.08 * index}>
-                    <article className="group h-full rounded-2xl border border-white/10 bg-[#263D2D]/75 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-yellow/40 hover:bg-[#263D2D] hover:shadow-[0_16px_36px_rgba(0,0,0,0.18)] sm:p-5">
-                      <div className="mb-5 flex items-start justify-between gap-3">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-yellow/20 bg-yellow/10 text-yellow transition-colors group-hover:bg-yellow group-hover:text-forest-dark">
-                          <Icon size={21} strokeWidth={1.8} />
-                        </div>
-                        <span className="font-body text-[10px] font-semibold tracking-[0.2em] text-white/35">0{index + 1}</span>
-                      </div>
-                      <h3 className="font-display text-xl font-bold italic text-white sm:text-2xl">{group.title}</h3>
-                      <p className="mt-1 font-body text-xs text-white/50">{group.subtitle}</p>
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {group.skills.map((skill) => (
-                          <span key={skill} className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 font-body text-xs font-medium text-white/85 transition-colors group-hover:border-white/15 group-hover:bg-white/[0.09]">
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </article>
+            <div className="space-y-7">
+              {skillGroups.map((group, index) => (
+                <div key={group.title}>
+                  <FadeUp delay={0.25 + index * 0.04}>
+                    <h3 className="mb-4 font-body text-lg font-semibold text-white">{group.title}</h3>
                   </FadeUp>
-                );
-              })}
+                  <div className="flex flex-wrap gap-3">
+                    {group.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="skill-pill inline-flex items-center rounded-full border border-white/20 bg-white/15 px-5 py-2.5 font-body text-sm font-medium text-white transition-colors duration-300 hover:bg-white/25"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
-
-
+          </div>
           </div>
         </div>
       </div>
