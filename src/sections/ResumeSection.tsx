@@ -301,7 +301,6 @@ export default function ResumeSection() {
               ))}
             </div>
           </div>
-          </div>
         </div>
       </div>
 
