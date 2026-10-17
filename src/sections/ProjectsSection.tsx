@@ -20,7 +20,7 @@ const projects = [
   },
   {
     title: 'DevDrop',
-    tech: 'AI Website Marketplace & Deployment Platform',
+    tech: 'AI Website Creation & Deployment Platform',
     link: 'https://dev-drop-gamma.vercel.app',
     github: 'https://github.com/RitikPuranik/DevDrop',
     description:
@@ -30,7 +30,7 @@ const projects = [
   },
   {
     title: 'CodeWave Solution',
-    tech: 'MERN Stack',
+    tech: 'AI-Assisted Coding Education Platform',
     link: 'https://codewavesolution.in',
     description:
       'Developed a scalable MERN-stack platform for online and offline coding courses with responsive frontend interfaces using React.js and Tailwind CSS and designed REST APIs using Node.js and Express.js with MongoDB integration.',
@@ -39,7 +39,7 @@ const projects = [
   },
   {
     title: 'FoodGram',
-    tech: 'Full-Stack MERN App',
+    tech: 'Social Food Discovery & Community Platform',
     link: 'https://food-app-nine-liard.vercel.app/',
     github: 'https://github.com/RitikPuranik/FoodGram',
     description:
