@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Download } from 'lucide-react';
+import { Download, Code2, PanelsTopLeft, Server, Database, Cloud, Wrench, BrainCircuit, GitBranch, Users } from 'lucide-react';
 import SparkleIcon from '@/components/SparkleIcon';
 import OutlinedTextFill from '@/components/OutlinedTextFill';
 import FadeUp from '@/components/FadeUp';
@@ -48,6 +48,47 @@ const certifications = [
   { org: 'CISCO Network Academy', items: 'Python Essentials, HTML, CSS, JavaScript' },
   { org: 'Oracle Academy', items: 'Database Foundation' },
 ];
+
+const skillGroups = [
+  {
+    title: 'Languages',
+    subtitle: 'Core programming',
+    icon: Code2,
+    skills: ['Java', 'Python', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3'],
+  },
+  {
+    title: 'Frontend',
+    subtitle: 'Interfaces & experiences',
+    icon: PanelsTopLeft,
+    skills: ['React', 'Next.js', 'Vite', 'Tailwind CSS', 'Framer Motion', 'GSAP'],
+  },
+  {
+    title: 'Backend',
+    subtitle: 'APIs & application logic',
+    icon: Server,
+    skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT Authentication', 'Socket.IO'],
+  },
+  {
+    title: 'Databases',
+    subtitle: 'Data & persistence',
+    icon: Database,
+    skills: ['MongoDB', 'PostgreSQL', 'Prisma ORM', 'Redis', 'Supabase'],
+  },
+  {
+    title: 'Cloud & DevOps',
+    subtitle: 'Build, ship, maintain',
+    icon: Cloud,
+    skills: ['Docker', 'Git', 'GitHub', 'Vercel', 'Render'],
+  },
+  {
+    title: 'AI & Developer Tools',
+    subtitle: 'Automation & workflow',
+    icon: BrainCircuit,
+    skills: ['Gemini', 'Groq', 'Playwright', 'Postman', 'VS Code'],
+  },
+];
+
+const professionalSkills = ['Problem solving', 'Team collaboration', 'Communication', 'Ownership'];
 
 export default function ResumeSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -271,82 +312,65 @@ export default function ResumeSection() {
           {/* Right Column - Skills */}
           <div className="skills-container">
             <FadeUp delay={0.2}>
-              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold italic text-yellow leading-[1.05] tracking-tight mb-10">
-                Technical Skills
-              </h2>
+              <div className="mb-8">
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="h-px w-8 bg-yellow" />
+                  <span className="font-body text-xs font-semibold uppercase tracking-[0.22em] text-yellow/75">My toolkit</span>
+                </div>
+                <h2 className="font-display text-4xl font-bold italic leading-[1.02] tracking-tight text-yellow sm:text-5xl lg:text-6xl">
+                  Technical<br className="hidden sm:block" /> Skills<span className="text-white">.</span>
+                </h2>
+                <p className="mt-4 max-w-xl font-body text-sm leading-relaxed text-white/65 sm:text-base">
+                  A practical stack shaped by building full-stack products, AI-powered features, real-time experiences, and deployment workflows.
+                </p>
+              </div>
             </FadeUp>
 
-            {/* Programming Languages */}
-            <FadeUp delay={0.3}>
-              <h3 className="font-body text-lg font-semibold text-white mb-4">Programming Languages</h3>
-            </FadeUp>
-            <div className="flex flex-wrap gap-3 mb-8">
-              {programmingLanguages.map((lang) => (
-                <span key={lang} className="skill-pill inline-flex items-center px-5 py-2.5 bg-white/15 text-white rounded-full font-body text-sm font-medium border border-white/20 hover:bg-white/25 transition-colors duration-300">
-                  {lang}
-                </span>
-              ))}
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {skillGroups.map((group, index) => {
+                const Icon = group.icon;
+                return (
+                  <FadeUp key={group.title} delay={0.08 * index}>
+                    <article className="skill-pill group h-full rounded-2xl border border-white/10 bg-[#263D2D]/75 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-yellow/40 hover:bg-[#263D2D] hover:shadow-[0_16px_36px_rgba(0,0,0,0.18)] sm:p-5">
+                      <div className="mb-5 flex items-start justify-between gap-3">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-yellow/20 bg-yellow/10 text-yellow transition-colors group-hover:bg-yellow group-hover:text-forest-dark">
+                          <Icon size={21} strokeWidth={1.8} />
+                        </div>
+                        <span className="font-body text-[10px] font-semibold tracking-[0.2em] text-white/35">0{index + 1}</span>
+                      </div>
+                      <h3 className="font-display text-xl font-bold italic text-white sm:text-2xl">{group.title}</h3>
+                      <p className="mt-1 font-body text-xs text-white/50">{group.subtitle}</p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {group.skills.map((skill) => (
+                          <span key={skill} className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 font-body text-xs font-medium text-white/85 transition-colors group-hover:border-white/15 group-hover:bg-white/[0.09]">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </article>
+                  </FadeUp>
+                );
+              })}
             </div>
 
-            {/* Frontend */}
-            <FadeUp delay={0.35}>
-              <h3 className="font-body text-lg font-semibold text-white mb-4">Frontend</h3>
-            </FadeUp>
-            <div className="flex flex-wrap gap-3 mb-8">
-              {frontendSkills.map((skill) => (
-                <span key={skill} className="skill-pill inline-flex items-center px-5 py-2.5 bg-white/15 text-white rounded-full font-body text-sm font-medium border border-white/20 hover:bg-white/25 transition-colors duration-300">
-                  {skill}
-                </span>
-              ))}
-            </div>
-
-            {/* Backend */}
-            <FadeUp delay={0.4}>
-              <h3 className="font-body text-lg font-semibold text-white mb-4">Backend & Database</h3>
-            </FadeUp>
-            <div className="flex flex-wrap gap-3 mb-8">
-              {backendSkills.map((skill) => (
-                <span key={skill} className="skill-pill inline-flex items-center px-5 py-2.5 bg-white/15 text-white rounded-full font-body text-sm font-medium border border-white/20 hover:bg-white/25 transition-colors duration-300">
-                  {skill}
-                </span>
-              ))}
-            </div>
-
-            {/* Platforms */}
-            <FadeUp delay={0.45}>
-              <h3 className="font-body text-lg font-semibold text-white mb-4">Platforms</h3>
-            </FadeUp>
-            <div className="flex flex-wrap gap-3 mb-8">
-              {platforms.map((plat) => (
-                <span key={plat} className="skill-pill inline-flex items-center px-5 py-2.5 bg-white/15 text-white rounded-full font-body text-sm font-medium border border-white/20 hover:bg-white/25 transition-colors duration-300">
-                  {plat}
-                </span>
-              ))}
-            </div>
-
-            {/* Cloud & DevOps */}
             <FadeUp delay={0.5}>
-              <h3 className="font-body text-lg font-semibold text-white mb-4">Cloud & DevOps</h3>
+              <div className="mt-5 rounded-2xl border border-yellow/20 bg-yellow/[0.08] p-5 sm:p-6">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow text-forest-dark">
+                    <Users size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl font-bold italic text-yellow">Beyond the code</h3>
+                    <p className="font-body text-xs text-white/55">How I work with people and problems</p>
+                  </div>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {professionalSkills.map((skill) => (
+                    <span key={skill} className="rounded-full border border-yellow/20 px-3.5 py-2 font-body text-xs font-medium text-cream/90">{skill}</span>
+                  ))}
+                </div>
+              </div>
             </FadeUp>
-            <div className="flex flex-wrap gap-3 mb-10">
-              {devops.map((tool) => (
-                <span key={tool} className="skill-pill inline-flex items-center px-5 py-2.5 bg-white/15 text-white rounded-full font-body text-sm font-medium border border-white/20 hover:bg-white/25 transition-colors duration-300">
-                  {tool}
-                </span>
-              ))}
-            </div>
-
-            {/* Professional Skills */}
-            <FadeUp delay={0.55}>
-              <h3 className="font-body text-lg font-semibold text-white mb-4">Professional Skills</h3>
-            </FadeUp>
-            <div className="flex flex-wrap gap-3">
-              {['Leadership qualities', 'Team management', 'Communication skills'].map((skill) => (
-                <span key={skill} className="skill-pill inline-flex items-center px-5 py-2.5 bg-yellow text-black rounded-full font-body text-sm font-medium hover:bg-yellow-light transition-colors duration-300">
-                  {skill}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>
